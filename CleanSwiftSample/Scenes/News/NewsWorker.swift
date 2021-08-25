@@ -11,7 +11,7 @@ protocol NewsWorkingLogic: AnyObject {
     func getNews(request: NewsList.Request, completion: @escaping ((Result<NewsList, Error>) -> Void))
 }
 
-final class NewsWorker {
+final class NewsWorker: NewsWorkingLogic {
 
     func getNews(request: NewsList.Request, completion: @escaping ((Result<NewsList, Error>) -> Void)) {
 

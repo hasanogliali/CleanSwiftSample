@@ -18,7 +18,12 @@ protocol NewsDataStore: AnyObject {
 class NewsInteractor: NewsBusinessLogic, NewsDataStore {
 
     var presenter: NewsPresentationLogic?
-    var worker: NewsWorker = NewsWorker()
+    var worker: NewsWorkingLogic
+
+    init(worker: NewsWorkingLogic) {
+        self.worker = worker
+    }
+
     var news: [Article]?
 
     func fetchNews(request: News.Fetch.Request) {

@@ -34,6 +34,7 @@
 		667D30C5257BA8F8005CDD7C /* NewsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667D30BE257BA8F8005CDD7C /* NewsModels.swift */; };
 		667D30C6257BA8F8005CDD7C /* NewsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667D30BF257BA8F8005CDD7C /* NewsWorker.swift */; };
 		667D30C7257BA8F8005CDD7C /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667D30C0257BA8F8005CDD7C /* NewsRouter.swift */; };
+		66A1694426D6C58300AAABEB /* NewsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A1694326D6C58300AAABEB /* NewsViewControllerTests.swift */; };
 		66A7E8A4257BE55C0055A52A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66A7E8A3257BE55C0055A52A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		667D30BE257BA8F8005CDD7C /* NewsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModels.swift; sourceTree = "<group>"; };
 		667D30BF257BA8F8005CDD7C /* NewsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWorker.swift; sourceTree = "<group>"; };
 		667D30C0257BA8F8005CDD7C /* NewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
+		66A1694326D6C58300AAABEB /* NewsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewControllerTests.swift; sourceTree = "<group>"; };
 		66A7E8A3257BE55C0055A52A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +194,7 @@
 		6655B44E257AAE110054D2A2 /* CleanSwiftSampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				66A1694326D6C58300AAABEB /* NewsViewControllerTests.swift */,
 				6655B44F257AAE110054D2A2 /* CleanSwiftSampleTests.swift */,
 				6655B451257AAE110054D2A2 /* Info.plist */,
 			);
@@ -455,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6655B450257AAE110054D2A2 /* CleanSwiftSampleTests.swift in Sources */,
+				66A1694426D6C58300AAABEB /* NewsViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

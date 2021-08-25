@@ -35,7 +35,7 @@ final class NewsViewController: UIViewController {
 
     private func setup() {
         let viewController = self
-        let interactor = NewsInteractor()
+        let interactor = NewsInteractor(worker: NewsWorker())
         let presenter = NewsPresenter()
         let router = NewsRouter()
         viewController.interactor = interactor
@@ -50,8 +50,6 @@ final class NewsViewController: UIViewController {
         super.viewDidLoad()
         // 1
         interactor?.fetchNews(request: News.Fetch.Request(country: "tr"))
-        tableView.delegate = self
-        tableView.dataSource = self
         tableView.registerNib(NewsCell.self, bundle: .main)
     }
 
