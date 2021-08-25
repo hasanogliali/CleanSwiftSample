@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol NewsWorkingLogic: AnyObject {
+    func getNews(request: NewsList.Request, completion: @escaping ((Result<NewsList, Error>) -> Void))
+}
+
 final class NewsWorker {
 
     func getNews(request: NewsList.Request, completion: @escaping ((Result<NewsList, Error>) -> Void)) {

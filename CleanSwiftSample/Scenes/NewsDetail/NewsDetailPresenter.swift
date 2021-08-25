@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol NewsDetailPresentationLogic: class {
+protocol NewsDetailPresentationLogic: AnyObject {
     func presentNewsDetail(response: NewsDetail.Fetch.Response)
 }
 

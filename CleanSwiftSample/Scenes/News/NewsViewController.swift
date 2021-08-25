@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol NewsDisplayLogic: class {
+protocol NewsDisplayLogic: AnyObject {
     func displayNews(viewModel: News.Fetch.ViewModel)
 }
 
@@ -15,6 +15,7 @@ final class NewsViewController: UIViewController {
 
     var interactor: NewsBusinessLogic?
     var router: (NewsRoutingLogic & NewsDataPassing)?
+
     var viewModel: News.Fetch.ViewModel?
     @IBOutlet weak var tableView: UITableView!
 
@@ -47,6 +48,7 @@ final class NewsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 1
         interactor?.fetchNews(request: News.Fetch.Request(country: "tr"))
         tableView.delegate = self
         tableView.dataSource = self

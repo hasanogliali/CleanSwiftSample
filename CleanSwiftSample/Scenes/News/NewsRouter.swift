@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-protocol NewsRoutingLogic: class {
+protocol NewsRoutingLogic: AnyObject {
 
     func routeToNewsDetail(index: Int)
 }
 
-protocol NewsDataPassing: class {
+protocol NewsDataPassing: AnyObject {
     var dataStore: NewsDataStore? { get }
 }
 
@@ -27,10 +27,8 @@ final class NewsRouter: NewsRoutingLogic, NewsDataPassing {
         let destVC: NewsDetailViewController = storyBoard.instantiateViewController(
             identifier: "NewsDetailViewController"
         )
-        destVC.router?.dataStore?.image = dataStore?.news?[index].urlToImage ?? ""
-        destVC.router?.dataStore?.title = dataStore?.news?[index].title ?? ""
-        destVC.router?.dataStore?.detailDescription = dataStore?.news?[index].articleDescription ?? ""
-        destVC.router?.dataStore?.publishDate = dataStore?.news?[index].publishedAt ?? ""
+        // data passing sample
+        destVC.router?.dataStore?.article = dataStore?.news?[index]
         self.viewController?.navigationController?.pushViewController(destVC, animated: true)
     }
 }

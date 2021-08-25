@@ -30,8 +30,7 @@ class Requester: ProviderProtocol {
         var queryParams = parameters
         queryParams["apiKey"] = "93b6e88ee27d4a9e8d5947008eab41db"
         let urlString = prepareUrl(params: queryParams)
-    AF.request(urlString,
-               method: .get).responseData { data in
+    AF.request(urlString, method: .get).responseData { data in
             switch data.result {
             case let .success(responseData):
                 do {
@@ -53,3 +52,5 @@ class Requester: ProviderProtocol {
         return resultUrl
     }
 }
+
+// https://newsapi.org/v2/top-headlines?apiKey=93b6e88ee27d4a9e8d5947008eab41db&country=tr

@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-protocol NewsDetailDisplayLogic: class {
+protocol NewsDetailDisplayLogic: AnyObject {
     func displayNewsDetail(viewModel: NewsDetail.Fetch.ViewModel)
 }
 

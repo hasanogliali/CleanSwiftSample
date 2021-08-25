@@ -7,15 +7,12 @@
 
 import Foundation
 
-protocol NewsDetailBusinessLogic: class {
+protocol NewsDetailBusinessLogic: AnyObject {
     func fetchNewsDetail(request: NewsDetail.Fetch.Request)
 }
 
-protocol NewsDetailDataStore: class {
-    var image: String { get set }
-    var title: String { get set }
-    var detailDescription: String { get set }
-    var publishDate: String { get set }
+protocol NewsDetailDataStore: AnyObject {
+    var article: Article? { get set }
 }
 
 class NewsDetailInteractor: NewsDetailBusinessLogic, NewsDetailDataStore {
@@ -23,17 +20,14 @@ class NewsDetailInteractor: NewsDetailBusinessLogic, NewsDetailDataStore {
     var presenter: NewsDetailPresentationLogic?
     var worker: NewsDetailWorker?
 
-    var image: String = ""
-    var title: String = ""
-    var detailDescription: String = ""
-    var publishDate: String = ""
+    var article: Article?
 
     func fetchNewsDetail(request: NewsDetail.Fetch.Request) {
         self.presenter?.presentNewsDetail(
-            response: NewsDetail.Fetch.Response(image: image,
-                                                title: title,
-                                                detailDescription: detailDescription,
-                                                publishDate: publishDate)
+            response: NewsDetail.Fetch.Response(image: article?.urlToImage ?? "",
+                                                title: article?.title ?? "",
+                                                detailDescription: article?.articleDescription ?? "",
+                                                publishDate: article?.publishedAt ?? "")
         )
     }
 }

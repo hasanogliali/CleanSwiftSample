@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol NewsBusinessLogic: class {
+protocol NewsBusinessLogic: AnyObject {
     func fetchNews(request: News.Fetch.Request)
 }
 
-protocol NewsDataStore: class {
+protocol NewsDataStore: AnyObject {
     var news: [Article]? { get }
 }
 
@@ -22,6 +22,7 @@ class NewsInteractor: NewsBusinessLogic, NewsDataStore {
     var news: [Article]?
 
     func fetchNews(request: News.Fetch.Request) {
+        // 2
         worker.getNews(request: NewsList.Request(country: request.country)) { [weak self] result in
             switch result {
             case .success(let response):

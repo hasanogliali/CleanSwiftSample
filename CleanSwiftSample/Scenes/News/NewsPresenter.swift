@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol NewsPresentationLogic: class {
+protocol NewsPresentationLogic: AnyObject {
     func presentNews(response: News.Fetch.Response)
     func presentAlert(error: Error)
 }
@@ -17,6 +17,7 @@ final class NewsPresenter: NewsPresentationLogic {
     weak var viewController: NewsDisplayLogic?
 
     func presentNews(response: News.Fetch.Response) {
+        // 3
         var news: [News.Fetch.ViewModel.New] = []
 
         response.news.forEach {

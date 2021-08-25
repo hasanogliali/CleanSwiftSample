@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol NewsDetailRoutingLogic: class {
+protocol NewsDetailRoutingLogic: AnyObject {
 
 }
 
-protocol NewsDetailDataPassing: class {
+protocol NewsDetailDataPassing: AnyObject {
     var dataStore: NewsDetailDataStore? { get }
 }
 
