@@ -23,11 +23,6 @@ class NewsDetailInteractor: NewsDetailBusinessLogic, NewsDetailDataStore {
     var article: Article?
 
     func fetchNewsDetail(request: NewsDetail.Fetch.Request) {
-        self.presenter?.presentNewsDetail(
-            response: NewsDetail.Fetch.Response(image: article?.urlToImage ?? "",
-                                                title: article?.title ?? "",
-                                                detailDescription: article?.articleDescription ?? "",
-                                                publishDate: article?.publishedAt ?? "")
-        )
+        self.presenter?.presentNewsDetail(response: .init(new: article))
     }
 }

@@ -14,13 +14,14 @@ protocol NewsDetailPresentationLogic: AnyObject {
 final class NewsDetailPresenter: NewsDetailPresentationLogic {
 
     weak var viewController: NewsDetailDisplayLogic?
-
     func presentNewsDetail(response: NewsDetail.Fetch.Response) {
         viewController?.displayNewsDetail(
-            viewModel: NewsDetail.Fetch.ViewModel(image: response.image,
-                                                  title: response.title,
-                                                  detailDescription: response.detailDescription,
-                                                  publishDate: response.publishDate)
+            viewModel: NewsDetail.Fetch.ViewModel(
+                image: response.new?.urlToImage ?? "",
+                title: response.new?.title ?? "",
+                detailDescription: response.new?.articleDescription ?? "",
+                publishDate: response.new?.publishedAt ?? ""
+            )
         )
     }
 }

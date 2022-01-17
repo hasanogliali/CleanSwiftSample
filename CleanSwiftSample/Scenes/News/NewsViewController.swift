@@ -31,6 +31,11 @@ final class NewsViewController: UIViewController {
         setup()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     // MARK: Setup
 
     private func setup() {
@@ -51,11 +56,6 @@ final class NewsViewController: UIViewController {
         // 1
         interactor?.fetchNews(request: News.Fetch.Request(country: "tr"))
         tableView.registerNib(NewsCell.self, bundle: .main)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
     }
 }
 

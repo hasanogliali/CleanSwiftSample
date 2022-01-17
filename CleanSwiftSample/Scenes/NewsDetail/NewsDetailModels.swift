@@ -17,10 +17,7 @@ enum NewsDetail {
         }
 
         struct Response {
-            var image: String
-            var title: String
-            var detailDescription: String
-            var publishDate: String
+            let new: Article?
         }
 
         struct ViewModel {

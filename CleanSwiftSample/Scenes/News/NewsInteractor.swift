@@ -32,9 +32,8 @@ class NewsInteractor: NewsBusinessLogic, NewsDataStore {
             switch result {
             case .success(let response):
                 self?.news = response.articles
-                (response.articles?.count ?? 0) > 0 ? self?.presenter?.presentNews(
-                    response: News.Fetch.Response(news: response.articles!)
-                ): ()
+                guard let news = self?.news else { return }
+                self?.presenter?.presentNews(response: News.Fetch.Response(news: news))
             case .failure(let error):
                 self?.presenter?.presentAlert(error: error)
             }
